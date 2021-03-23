@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        img{
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: 1px solid white;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<img src="img/cat0.png" data-al-src="img/ninja0.png" alt="img_puzzle-1">
+<img src="img/cat1.png" data-al-src="img/ninja1.png" alt="img_puzzle-2">
+<img src="img/cat2.png" data-al-src="img/ninja2.png" alt="img_puzzle-3">
+<img src="img/cat3.png" data-al-src="img/ninja3.png" alt="img_puzzle-4">
+<img src="img/cat4.png" data-al-src="img/ninja4.png" alt="img_puzzle-5">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+    let previousSrc = null;
+    let currentSrc = null;
+
+    $("img").on("click",(e)=>{
+        currentSrc = $(e.target).attr("data-al-src");
+        previousSrc = $(e.target).attr("src");
+
+        $(e.target).attr("src",currentSrc);
+        $(e.target).attr("data-al-src", previousSrc);
+    })
+</script>
+
+</body>
+</html>
